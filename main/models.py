@@ -4,12 +4,18 @@ from django.db import models as m
 class Element(m.Model):
     name = m.CharField(max_length=100, unique=True)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name_plural = "Elements"
 
 
 class WeaponType(m.Model):
     name = m.CharField(max_length=100, unique=True)
+    
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name_plural = "Weapon types"
@@ -18,9 +24,15 @@ class WeaponType(m.Model):
 class Region(m.Model):
     name = m.CharField(max_length=100, unique=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Rarity(m.Model):
     rarity = m.CharField(max_length=42)
+
+    def __str__(self):
+        return self.rarity
 
     class Meta:
         verbose_name_plural = "Rarities"
@@ -34,3 +46,6 @@ class Character(m.Model):
     region = m.ForeignKey(Region, on_delete=m.CASCADE)
     rarity = m.ForeignKey(Rarity, on_delete=m.CASCADE)
     added_at = m.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
