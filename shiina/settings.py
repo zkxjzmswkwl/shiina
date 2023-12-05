@@ -15,7 +15,8 @@ SECRET_KEY = "django-insecure-u#q21(rmlw^d#gurb&ssd@au=60*$xn7j%7cg@1%=8bzff__eo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shiina.ryswick.net']
+CSRF_TRUSTED_ORIGINS = ['https://shiina.ryswick.net']
 
 
 # Application definition
